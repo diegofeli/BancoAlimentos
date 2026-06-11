@@ -1,4 +1,4 @@
-const VERSION = "1.0.1";
+const VERSION = "1.0.3";
 let preguntasEvaluacion = [];
 
 function obtenerPreguntasAleatorias(
@@ -434,7 +434,7 @@ function abrirSubmodulo(sub) {
             <audio
                 id="audioCurso"
                 controls
-                style="width:100%;">
+                width="100%">
 
                 <source
                     src="${sub.archivo}"
@@ -457,16 +457,6 @@ function abrirSubmodulo(sub) {
 
             <br><br>
 
-            <button
-                id="btnCompletar"
-                disabled>
-
-                Completar módulo
-
-            </button>
-
-            <br><br>
-
             <a
                 href="${sub.archivo}"
                 target="_blank"
@@ -475,6 +465,16 @@ function abrirSubmodulo(sub) {
                 🎧 Abrir Audio
 
             </a>
+
+            <br><br>
+
+            <button
+                id="btnCompletar"
+                disabled>
+
+                Completar módulo
+
+            </button>
 
         `;
     }
@@ -493,25 +493,49 @@ function abrirSubmodulo(sub) {
 
         return;
     }
-    
+
     c.innerHTML = html;
 
-    if(sub.tipo === "audio"){
+    if (sub.tipo === "audio") {
 
-        const audio =
-            document.getElementById("audioCurso");
+        const video =
+            document.getElementById(
+                "audioCurso"
+            );
+
+        const chk =
+            document.getElementById(
+                "confirmarAudio"
+            );
 
         const btn =
-            document.getElementById("btnCompletar");
+            document.getElementById(
+                "btnCompletar"
+            );
 
-        audio.addEventListener(
+        video.addEventListener(
             "ended",
             () => {
 
-                btn.style.display = "inline-block";
+                chk.disabled = false;
 
             }
         );
+
+        chk.addEventListener(
+            "change",
+            () => {
+
+                btn.disabled =
+                    !chk.checked;
+
+            }
+        );
+
+        btn.onclick =
+            () => completarYContinuar(
+                sub.id
+            );
 
     }
 
