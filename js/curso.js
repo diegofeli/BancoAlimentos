@@ -188,7 +188,7 @@ const CURSO = {
                     archivo: "recursos/Infografía 1.pdf"
                 },
                 {
-                    id: "5.2",
+                    id: "5.3",
                     titulo: "Infografía Crianza Positiva: Educar con Respeto y Límites Saludables.",
                     descripcion: "descripción4",
                     tipo: "pdf",

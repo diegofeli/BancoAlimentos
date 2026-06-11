@@ -1,4 +1,4 @@
-const VERSION = "1.0.1";
+const VERSION = "1.0.2";
 let preguntasEvaluacion = [];
 
 function obtenerPreguntasAleatorias(
@@ -254,7 +254,7 @@ function completarSubmodulo(id) {
 
 function puedeAbrir(id) {
 
-    if (id === "5.2") {
+    if (id === "7.1") {
 
         return localStorage.getItem(
             "curso_aprobado"
@@ -593,16 +593,20 @@ function completarYContinuar(id) {
 
     const siguiente =
         ORDEN_SUBMODULOS[
-        indice + 1
+            indice + 1
         ];
 
-    if (siguiente) {
+    if(!siguiente){
+        return;
+    }
+
+    setTimeout(() => {
 
         abrirPorId(
             siguiente
         );
 
-    }
+    }, 200);
 
 }
 
