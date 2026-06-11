@@ -1,4 +1,4 @@
-const VERSION = "1.0.2";
+const VERSION = "1.0.1";
 let preguntasEvaluacion = [];
 
 function obtenerPreguntasAleatorias(
@@ -493,7 +493,27 @@ function abrirSubmodulo(sub) {
 
         return;
     }
+    
     c.innerHTML = html;
+
+    if(sub.tipo === "audio"){
+
+        const audio =
+            document.getElementById("audioCurso");
+
+        const btn =
+            document.getElementById("btnCompletar");
+
+        audio.addEventListener(
+            "ended",
+            () => {
+
+                btn.style.display = "inline-block";
+
+            }
+        );
+
+    }
 
     if (sub.tipo === "video") {
 
