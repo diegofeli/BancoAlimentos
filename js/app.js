@@ -1,4 +1,4 @@
-const VERSION = "1.0.3";
+const VERSION = "1.0.1";
 let preguntasEvaluacion = [];
 
 function obtenerPreguntasAleatorias(
@@ -254,7 +254,7 @@ function completarSubmodulo(id) {
 
 function puedeAbrir(id) {
 
-    if (id === "4.1") {
+    if (id === "5.2") {
 
         return localStorage.getItem(
             "curso_aprobado"
