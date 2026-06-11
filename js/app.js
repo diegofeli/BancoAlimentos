@@ -1,3 +1,38 @@
+const VERSION = "1.0.1";
+let preguntasEvaluacion = [];
+
+function obtenerPreguntasAleatorias(
+    cantidad = 10
+){
+
+    const copia =
+        [...PREGUNTAS];
+
+    copia.sort(
+        () => Math.random() - 0.5
+    );
+
+    return copia.slice(
+        0,
+        cantidad
+    );
+
+}
+
+if(
+    localStorage.getItem(
+        "version_lms"
+    ) !== VERSION
+){
+
+    localStorage.clear();
+
+    localStorage.setItem(
+        "version_lms",
+        VERSION
+    );
+
+}
 
 let avance = JSON.parse(
     localStorage.getItem("avance")
@@ -551,6 +586,9 @@ function abrirPorId(id) {
 
 function mostrarEvaluacion() {
 
+    preguntasEvaluacion =
+        obtenerPreguntasAleatorias(10);
+
     const c =
         document.getElementById(
             "contenido"
@@ -564,7 +602,7 @@ function mostrarEvaluacion() {
         <form id="formEvaluacion">
     `;
 
-    PREGUNTAS.forEach(
+    preguntasEvaluacion.forEach(
         (pregunta, index) => {
 
             html += `
@@ -627,7 +665,7 @@ function calificarEvaluacion() {
 
     let correctas = 0;
 
-    PREGUNTAS.forEach(
+    preguntasEvaluacion.forEach(
         (pregunta, index) => {
 
             const respuesta =
@@ -650,7 +688,7 @@ function calificarEvaluacion() {
     );
 
     const total =
-        PREGUNTAS.length;
+        preguntasEvaluacion.length;
 
     const porcentaje =
         Math.round(
@@ -882,9 +920,20 @@ function generarCertificado() {
 
 function reiniciarCurso() {
 
-    localStorage.clear();
+   if(
+       !confirm(
+           "¿Está seguro de reiniciar el curso? Se perderá todo el avance."
+       )
+   ){
+       return;
+   }
 
-    location.reload();
+   localStorage.clear();
+
+   sessionStorage.clear();
+
+   location.href =
+       window.location.pathname;
 
 }
 

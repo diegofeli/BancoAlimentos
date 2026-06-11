@@ -1,11 +1,23 @@
 
 const PREGUNTAS = [
-    { pregunta: 'Pregunta 1', opciones: ['A', 'B', 'C', 'D'], correcta: 0 },
-    { pregunta: 'Pregunta 2', opciones: ['A', 'B', 'C', 'D'], correcta: 1 },
-    { pregunta: 'Pregunta 3', opciones: ['A', 'B', 'C', 'D'], correcta: 0 },
-    { pregunta: 'Pregunta 4', opciones: ['A', 'B', 'C', 'D'], correcta: 1 },
-    { pregunta: 'Pregunta 5', opciones: ['A', 'B', 'C', 'D'], correcta: 0 },
-    { pregunta: 'Pregunta 6', opciones: ['A', 'B', 'C', 'D'], correcta: 1 },
-    { pregunta: 'Pregunta 7', opciones: ['A', 'B', 'C', 'D'], correcta: 0 },
-    { pregunta: 'Pregunta 8', opciones: ['A', 'B', 'C', 'D'], correcta: 1 }
+    { pregunta: '¿Cuál es una característica clave de la comunicación asertiva?', opciones: ['Hablar sin esperar respuesta', 'Expresar ideas y emociones respetando los derechos propios y ajenos', 'Evitar conversaciones difíciles', 'Imponer el propio punto de vista'], correcta: 1 },
+    { pregunta: 'La escucha activa implica principalmente:', opciones: ['Pensar en la respuesta mientras el otro habla', 'Prestar atención plena a quien habla, sin interrupciones', 'Asentir sin entender el mensaje', 'Hablar más que escuchar'], correcta: 1 },
+    { pregunta: '¿Cuál de las siguientes es una estrategia de regulación emocional adecuada?', opciones: ['Suprimir las emociones para evitar conflictos', 'Respirar profundo y hacer una pausa antes de responder', 'Ignorar lo que siente la otra persona', 'Reaccionar de inmediato ante cualquier situación'], correcta: 1 },
+    { pregunta: 'Reconocer y nombrar las emociones propias contribuye a:', opciones: ['Aumentar los conflictos familiares', 'Perder el control de la situación', 'Mejorar la comunicación y la convivencia familiar', 'Distanciarse de los demás'], correcta: 2 },
+    { pregunta: '¿Cuál es una forma constructiva de ver el conflicto familiar?', opciones: ['Como algo que debe evitarse siempre', 'Como una oportunidad de aprendizaje y crecimiento', 'Como señal de que la familia ha fracasado', 'Como algo que solo le corresponde resolver a los adultos'], correcta: 1 },
+    { pregunta: 'La mediación familiar busca principalmente:', opciones: ['Que una sola persona gane el debate', 'Construir acuerdos que beneficien a todas las partes', 'Ignorar las emociones involucradas', 'Imponer soluciones desde afuera'], correcta: 1 },
+    { pregunta: 'En una conversación de diálogo para resolver un conflicto, ¿qué actitud es más útil?', opciones: ['Interrumpir para aclarar puntos', 'Mantener una postura defensiva', 'Escuchar con empatía y sin juzgar', 'Buscar ganar el argumento'], correcta: 2 },
+    { pregunta: '¿Cuál de los siguientes es un paso clave para construir acuerdos familiares?', opciones: ['Que el más fuerte decida', 'Identificar necesidades comunes y establecer compromisos', 'Evitar hablar del tema', 'Recurrir siempre a un tercero'], correcta: 1 },
+    { pregunta: '¿Qué significa que los derechos humanos son universales?', opciones: ['Solo aplican en algunos países', 'Pertenecen a todas las personas sin distinción', 'Dependen del nivel socioeconómico', 'Son otorgados por el gobierno'], correcta: 1 },
+    { pregunta: 'La equidad en la familia se refiere a:', opciones: ['Dar lo mismo a todos sin considerar necesidades', 'Reconocer las necesidades individuales y responder a ellas de forma justa', 'Que los adultos siempre tengan la razón', 'Ignorar las diferencias entre sus miembros'], correcta: 1 },
+    { pregunta: '¿Cuál de estos es un ejemplo de práctica inclusiva en el hogar?', opciones: ['Excluir a miembros por sus diferencias', 'Valorar y respetar las opiniones de cada integrante', 'Imponer las decisiones de una sola persona', 'Tratar igual a todos sin importar sus necesidades'], correcta: 1 },
+    { pregunta: 'La diversidad familiar puede incluir:', opciones: ['Únicamente diferencias de edad', 'Solo diferencias de género', 'Diferencias culturales, de capacidad, de estructura familiar y más', 'Solo diferencias económicas'], correcta: 2 },
+    { pregunta: '¿Qué es la resiliencia familiar?', opciones: ['La capacidad de ignorar los problemas', 'La habilidad de adaptarse y recuperarse ante situaciones difíciles', 'Evitar toda situación de riesgo', 'Depender siempre de ayuda externa'], correcta: 1 },
+    { pregunta: 'Un factor protector importante para la resiliencia es:', opciones: ['El aislamiento social', 'Contar con redes de apoyo y vínculos afectivos fuertes', 'Negar las dificultades que se viven', 'La independencia absoluta de cada miembro'], correcta: 1 },
+    { pregunta: '¿Cuál de estas es una estrategia para afrontar cambios difíciles?', opciones: ['Ignorar las emociones para seguir adelante', 'Identificar los recursos y fortalezas disponibles en la familia', 'Buscar culpables dentro del hogar', 'Evitar comunicar lo que se siente'], correcta: 1 },
+    { pregunta: 'El bienestar familiar se construye principalmente a través de:', opciones: ['La ausencia total de conflictos', 'El diálogo, el apoyo mutuo y la gestión emocional', 'Que todos piensen igual', 'La independencia de cada integrante'], correcta: 1 },
+    { pregunta: '¿Qué caracteriza a la crianza positiva?', opciones: ['El uso del castigo físico como herramienta principal', 'Establecer vínculos afectivos y límites claros con respeto', 'Ignorar las necesidades emocionales de los niños', 'Dejar que los niños hagan lo que quieran'], correcta: 1 },
+    { pregunta: 'La disciplina positiva se diferencia del castigo porque:', opciones: ['Es más permisiva y sin consecuencias', 'Busca enseñar y guiar en lugar de castigar', 'No establece ningún tipo de límite', 'Solo la aplican los expertos'], correcta: 1 },
+    { pregunta: '¿Por qué son importantes los vínculos afectivos en el desarrollo infantil?', opciones: ['No tienen impacto en el desarrollo', 'Generan sobreprotección que perjudica a los niños', 'Proporcionan seguridad emocional y base para el aprendizaje', 'Solo importan en los primeros meses de vida'], correcta: 2 },
+    { pregunta: 'Un límite saludable en la crianza es aquel que:', opciones: ['Se impone con agresividad para ser efectivo', 'Se establece con amor, coherencia y explicación comprensible', 'Es tan flexible que no se puede cumplir', ''], correcta: 1 }
 ];
