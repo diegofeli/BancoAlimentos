@@ -23,7 +23,7 @@ const CURSO = {
                     titulo: "Conceptos Básicos",
                     descripcion: "descripción1",
                     tipo: "video",
-                    archivo: "recursos/video1.mp4"
+                    archivo: "recursos/Video1.mp4"
                 },
 
                 {
@@ -31,7 +31,7 @@ const CURSO = {
                     titulo: "Fundamentos",
                     descripcion: "descripción2",
                     tipo: "video",
-                    archivo: "recursos/video2.mp4"
+                    archivo: "recursos/Video2.mp4"
                 },
 
                 {
@@ -64,7 +64,7 @@ const CURSO = {
                     titulo: "Caso Real",
                     descripcion: "descripción4",
                     tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    archivo: "recursos/Video3.mp4"
                 }
 
             ]
