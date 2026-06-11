@@ -2,7 +2,7 @@
 let avance = JSON.parse(
     localStorage.getItem("avance")
 ) || {
-    completados:[]
+    completados: []
 };
 
 let participante = JSON.parse(
@@ -14,18 +14,18 @@ if (!participante) {
     let nombre = "";
     let documento = "";
 
-    while(true){
+    while (true) {
 
         nombre = prompt(
             "Ingrese su nombre completo"
         );
 
-        if(
+        if (
             nombre &&
             /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/.test(
                 nombre.trim()
             )
-        ){
+        ) {
             break;
         }
 
@@ -35,18 +35,18 @@ if (!participante) {
 
     }
 
-    while(true){
+    while (true) {
 
         documento = prompt(
             "Ingrese su documento"
         );
 
-        if(
+        if (
             documento &&
             /^[0-9.]+$/.test(
                 documento.trim()
             )
-        ){
+        ) {
             break;
         }
 
@@ -122,29 +122,31 @@ function renderMenu() {
 
             item.className =
                 bloqueado
-                ? "submodulo bloqueado"
-                : "submodulo";
+                    ? "submodulo bloqueado"
+                    : "submodulo";
 
             let icono = "📄";
 
-            if(sub.tipo === "video")
+            if (sub.tipo === "video")
                 icono = "🎥";
 
-            if(sub.tipo === "evaluacion")
+            if (sub.tipo === "audio")
+                icono = "🎧";
+
+            if (sub.tipo === "evaluacion")
                 icono = "📝";
 
-            if(sub.tipo === "certificado")
+            if (sub.tipo === "certificado")
                 icono = "🏆";
 
             item.innerHTML = `
 
                 <div class="subtitulo">
 
-                    ${
-                        bloqueado
-                        ? "🔒"
-                        : icono
-                    }
+                    ${bloqueado
+                    ? "🔒"
+                    : icono
+                }
 
                     ${sub.titulo}
 
@@ -158,7 +160,7 @@ function renderMenu() {
 
             `;
 
-            if(!bloqueado){
+            if (!bloqueado) {
 
                 item.onclick =
                     () => abrirSubmodulo(sub);
@@ -167,11 +169,11 @@ function renderMenu() {
 
             // Mostrar completado
 
-            if(
+            if (
                 avance.completados.includes(
                     sub.id
                 )
-            ){
+            ) {
 
                 item.classList.add(
                     "completado"
@@ -199,11 +201,11 @@ function renderMenu() {
 
 }
 
-function completarSubmodulo(id){
+function completarSubmodulo(id) {
 
-    if(
+    if (
         !avance.completados.includes(id)
-    ){
+    ) {
 
         avance.completados.push(id);
 
@@ -215,9 +217,9 @@ function completarSubmodulo(id){
 
 }
 
-function puedeAbrir(id){
+function puedeAbrir(id) {
 
-    if(id === "4.1"){
+    if (id === "4.1") {
 
         return localStorage.getItem(
             "curso_aprobado"
@@ -228,13 +230,13 @@ function puedeAbrir(id){
     const posicion =
         ORDEN_SUBMODULOS.indexOf(id);
 
-    if(posicion === 0){
+    if (posicion === 0) {
         return true;
     }
 
     const anterior =
         ORDEN_SUBMODULOS[
-            posicion - 1
+        posicion - 1
         ];
 
     return avance.completados.includes(
@@ -360,45 +362,97 @@ function abrirSubmodulo(sub) {
             </button>
         `;
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
-                const chk =
-                    document.getElementById(
-                        "confirmarLectura"
-                    );
-
-                const btn =
-                    document.getElementById(
-                        "btnCompletar"
-                    );
-
-                chk.addEventListener(
-                    "change",
-                    ()=>{
-
-                        btn.disabled =
-                            !chk.checked;
-
-                    }
+            const chk =
+                document.getElementById(
+                    "confirmarLectura"
                 );
 
-                btn.onclick =
-                    ()=>completarYContinuar(
-                        sub.id
-                    );
+            const btn =
+                document.getElementById(
+                    "btnCompletar"
+                );
 
-            },100);
+            chk.addEventListener(
+                "change",
+                () => {
+
+                    btn.disabled =
+                        !chk.checked;
+
+                }
+            );
+
+            btn.onclick =
+                () => completarYContinuar(
+                    sub.id
+                );
+
+        }, 100);
     }
 
-    if(sub.tipo==="evaluacion"){
+    if (sub.tipo === "audio") {
+
+        html += `
+
+            <audio
+                id="audioCurso"
+                controls
+                style="width:100%;">
+
+                <source
+                    src="${sub.archivo}"
+                    type="audio/mpeg">
+
+            </audio>
+
+            <br><br>
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="confirmarAudio"
+                    disabled>
+
+                Confirmo que escuché el audio
+
+            </label>
+
+            <br><br>
+
+            <button
+                id="btnCompletar"
+                disabled>
+
+                Completar módulo
+
+            </button>
+
+            <br><br>
+
+            <a
+                href="${sub.archivo}"
+                target="_blank"
+                class="btn">
+
+                🎧 Abrir Audio
+
+            </a>
+
+        `;
+    }
+
+    if (sub.tipo === "evaluacion") {
 
         mostrarEvaluacion();
 
         return;
 
     }
-    
-    if(sub.tipo === "certificado"){
+
+    if (sub.tipo === "certificado") {
 
         mostrarCertificado();
 
@@ -406,7 +460,7 @@ function abrirSubmodulo(sub) {
     }
     c.innerHTML = html;
 
-    if(sub.tipo === "video"){
+    if (sub.tipo === "video") {
 
         const video =
             document.getElementById(
@@ -425,7 +479,7 @@ function abrirSubmodulo(sub) {
 
         video.addEventListener(
             "ended",
-            ()=>{
+            () => {
 
                 chk.disabled = false;
 
@@ -434,7 +488,7 @@ function abrirSubmodulo(sub) {
 
         chk.addEventListener(
             "change",
-            ()=>{
+            () => {
 
                 btn.disabled =
                     !chk.checked;
@@ -443,7 +497,7 @@ function abrirSubmodulo(sub) {
         );
 
         btn.onclick =
-            ()=>completarYContinuar(
+            () => completarYContinuar(
                 sub.id
             );
 
@@ -451,7 +505,7 @@ function abrirSubmodulo(sub) {
 
 }
 
-function completarYContinuar(id){
+function completarYContinuar(id) {
 
     completarSubmodulo(id);
 
@@ -460,10 +514,10 @@ function completarYContinuar(id){
 
     const siguiente =
         ORDEN_SUBMODULOS[
-            indice + 1
+        indice + 1
         ];
 
-    if(siguiente){
+    if (siguiente) {
 
         abrirPorId(
             siguiente
@@ -473,13 +527,13 @@ function completarYContinuar(id){
 
 }
 
-function abrirPorId(id){
+function abrirPorId(id) {
 
     CURSO.modulos.forEach(modulo => {
 
         modulo.submodulos.forEach(sub => {
 
-            if(sub.id === id){
+            if (sub.id === id) {
 
                 abrirSubmodulo(sub);
 
@@ -606,21 +660,21 @@ function calificarEvaluacion() {
     const aprobado =
         porcentaje >= 70;
 
-        if(aprobado){
+    if (aprobado) {
 
-            localStorage.setItem(
-                "curso_aprobado",
-                "true"
-            );
+        localStorage.setItem(
+            "curso_aprobado",
+            "true"
+        );
 
-            completarSubmodulo(
-                "3.1"
-            );
+        completarSubmodulo(
+            "6.1"
+        );
 
-            renderMenu();
+        renderMenu();
 
-        }
-        
+    }
+
     document.getElementById(
         "contenido"
     ).innerHTML = `
@@ -648,18 +702,16 @@ function calificarEvaluacion() {
 
             <h3>
 
-                ${
-                    aprobado
-                    ? "✅ APROBADO"
-                    : "❌ NO APROBADO"
-                }
+                ${aprobado
+            ? "✅ APROBADO"
+            : "❌ NO APROBADO"
+        }
 
             </h3>
 
-            ${
-                aprobado
-                ?
-                `
+            ${aprobado
+            ?
+            `
                 <p style="color:green">
 
                     Evaluación aprobada.
@@ -668,8 +720,8 @@ function calificarEvaluacion() {
 
                 </p>
                 `
-                :
-                `
+            :
+            `
                 <p>
                     Debe obtener mínimo
                     ${CURSO.notaMinima}% para aprobar.
@@ -681,7 +733,7 @@ function calificarEvaluacion() {
 
                 </button>
                 `
-            }
+        }
 
             <button
                 onclick="reiniciarCurso()">
@@ -699,7 +751,7 @@ function calificarEvaluacion() {
 // CERTIFICADO
 // ======================================
 
-function generarCertificado(){
+function generarCertificado() {
 
     const { jsPDF } = window.jspdf;
 
@@ -713,7 +765,7 @@ function generarCertificado(){
         "Montserrat-ExtraBold.ttf",
         MONTSERRAT_FONT
     );
-        
+
     pdf.addFont(
         "Montserrat-ExtraBold.ttf",
         "Montserrat",
@@ -734,59 +786,59 @@ function generarCertificado(){
     );
 
     // NOMBRE
-    pdf.setFont("helvetica","bold");
+    pdf.setFont("helvetica", "bold");
     pdf.setFontSize(26);
-    pdf.setTextColor(11,42,99);
+    pdf.setTextColor(11, 42, 99);
 
     pdf.text(
         participante.nombre,
         148,
         84,
-        { align:"center" }
+        { align: "center" }
     );
 
     // DOCUMENTO
-    pdf.setFont("helvetica","normal");
+    pdf.setFont("helvetica", "normal");
     pdf.setFontSize(16);
-    pdf.setTextColor(80,80,80);
+    pdf.setTextColor(80, 80, 80);
 
     pdf.text(
         "CC No. " +
         participante.documento,
         148,
         98,
-        { align:"center" }
+        { align: "center" }
     );
 
     //ASISTENCIA
-    pdf.setFont("times","normal");
+    pdf.setFont("times", "normal");
     pdf.setFontSize(18);
-    pdf.setTextColor(60,60,60);
+    pdf.setTextColor(60, 60, 60);
 
     pdf.text(
         "Asistió y aprobó la formación en -",
         148,
         115,
-        { align:"center" }
+        { align: "center" }
     );
 
     // CURSO
     pdf.setFont("Montserrat");
     pdf.setFontSize(14);
-    pdf.setTextColor(11,42,99);
+    pdf.setTextColor(11, 42, 99);
 
     pdf.text(
         CURSO.nombre,
         148,
         125,
-        { align:"center" }
+        { align: "center" }
     );
 
     pdf.text(
         "Intensidad horaria: " + CURSO.intensidadHoraria,
         148,
         144,
-        { align:"center" }
+        { align: "center" }
     );
 
     // FECHA
@@ -804,21 +856,20 @@ function generarCertificado(){
     const anio = fechaActual.getFullYear();
 
     const fecha =
-        `${dia} ${
-            mes.charAt(0).toUpperCase() +
-            mes.slice(1)
+        `${dia} ${mes.charAt(0).toUpperCase() +
+        mes.slice(1)
         } ${anio}`;
 
-    pdf.setFont("times","normal");
+    pdf.setFont("times", "normal");
     pdf.setFontSize(18);
-    pdf.setTextColor(60,60,60);
+    pdf.setTextColor(60, 60, 60);
 
     pdf.text(
         "Bogotá, " +
         fecha,
         148,
         155,
-        { align:"center" }
+        { align: "center" }
     );
 
     pdf.save("certificado.pdf");
@@ -847,13 +898,13 @@ renderMenu();
 
 const primerSubmodulo =
     CURSO.modulos[0]
-         .submodulos[0];
+        .submodulos[0];
 
 abrirSubmodulo(
     primerSubmodulo
 );
 
-function mostrarCertificado(){
+function mostrarCertificado() {
 
     const aprobado =
         localStorage.getItem(
@@ -865,7 +916,7 @@ function mostrarCertificado(){
             "contenido"
         );
 
-    if(aprobado !== "true"){
+    if (aprobado !== "true") {
 
         c.innerHTML = `
 
@@ -910,7 +961,7 @@ function mostrarCertificado(){
     `;
 }
 
-function guardarAvance(){
+function guardarAvance() {
 
     localStorage.setItem(
         "avance",
@@ -919,7 +970,7 @@ function guardarAvance(){
 
 }
 
-function reintentarEvaluacion(){
+function reintentarEvaluacion() {
 
     mostrarEvaluacion();
 
