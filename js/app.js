@@ -1,4 +1,4 @@
-const VERSION = "1.0.2";
+const VERSION = "1.0.1";
 let preguntasEvaluacion = [];
 
 function obtenerPreguntasAleatorias(
@@ -806,9 +806,9 @@ function calificarEvaluacion() {
 
                 </p>
                 <button
-                    onclick="reintentarEvaluacion()">
+                    onclick="mostrarCertificado()">
 
-                    Reintentar Evaluación
+                    Generar Cerfiticado
 
                 </button>
                 `
@@ -819,9 +819,9 @@ function calificarEvaluacion() {
                     ${CURSO.notaMinima}% para aprobar.
                 </p>
                 <button
-                    onclick="mostrarCertificado()">
+                    onclick="reintentarEvaluacion()">
 
-                    Generar Cerfiticado
+                    Reintentar Evaluación
 
                 </button>
                 `
