@@ -101,29 +101,29 @@ const CURSO = {
                     id: "3.1",
                     titulo: "Derechos y responsabilidades en la familia.",
                     descripcion: "descripción4",
-                    tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    tipo: "pdf",
+                    archivo: "recursos/Infografía 1.pdf"
                 },
                 {
                     id: "3.2",
                     titulo: "Igualdad y equidad en las relaciones familiares.",
                     descripcion: "descripción4",
-                    tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    tipo: "pdf",
+                    archivo: "recursos/Infografía 1.pdf"
                 },
                 {
                     id: "3.3",
                     titulo: "Diversidad e inclusión como factores de convivencia.",
                     descripcion: "descripción4",
-                    tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    tipo: "pdf",
+                    archivo: "recursos/Infografía 1.pdf"
                 },
                 {
                     id: "3.4",
                     titulo: "Infografía Derechos Humanos, Inclusión y Diversidad Familiar.",
                     descripcion: "descripción4",
-                    tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    tipo: "pdf",
+                    archivo: "recursos/Infografía 1.pdf"
                 }
 
             ]
@@ -139,29 +139,29 @@ const CURSO = {
                     id: "4.1",
                     titulo: "¿Qué es la resiliencia familiar?",
                     descripcion: "descripción4",
-                    tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    tipo: "pdf",
+                    archivo: "recursos/Infografía 1.pdf"
                 },
                 {
                     id: "4.2",
                     titulo: "Factores protectores y redes de apoyo.",
                     descripcion: "descripción4",
-                    tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    tipo: "pdf",
+                    archivo: "recursos/Infografía 1.pdf"
                 },
                 {
                     id: "4.3",
                     titulo: "Estrategias para afrontar cambios y dificultades.",
                     descripcion: "descripción4",
-                    tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    tipo: "pdf",
+                    archivo: "recursos/Infografía 1.pdf"
                 },
                 {
                     id: "4.4",
                     titulo: "Infografía Resiliencia y Bienestar Familiar.",
                     descripcion: "descripción4",
-                    tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    tipo: "pdf",
+                    archivo: "recursos/Infografía 1.pdf"
                 }
 
             ]
@@ -184,15 +184,15 @@ const CURSO = {
                     id: "5.2",
                     titulo: "-------------------",
                     descripcion: "descripción4",
-                    tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    tipo: "pdf",
+                    archivo: "recursos/Infografía 1.pdf"
                 },
                 {
                     id: "5.2",
                     titulo: "Infografía Crianza Positiva: Educar con Respeto y Límites Saludables.",
                     descripcion: "descripción4",
-                    tipo: "video",
-                    archivo: "recursos/video3.mp4"
+                    tipo: "pdf",
+                    archivo: "recursos/Infografía 1.pdf"
                 }
 
             ]
