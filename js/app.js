@@ -135,9 +135,6 @@ function renderMenu() {
                 ${modulo.titulo}
             </h3>
 
-            <p>
-                ${modulo.descripcion}
-            </p>
 
         `;
 
