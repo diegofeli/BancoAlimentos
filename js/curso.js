@@ -102,21 +102,21 @@ const CURSO = {
                     titulo: "Derechos y responsabilidades en la familia.",
                     descripcion: "Este documento aborda la importancia de reconocer los derechos y responsabilidades de cada integrante de la familia como elementos fundamentales para una convivencia saludable. Se promueve la comprensión de la dignidad humana, el respeto mutuo y la corresponsabilidad como bases para fortalecer las relaciones familiares.",
                     tipo: "pdf",
-                    archivo: "recursos/M3_1 DERECHOS HUMANOS, INCLUSIÓN Y DIVERSIDAD FAMILIAR.pdf"
+                    archivo: "recursos/M3_1 DERECHOS HUMANOS INCLUSIÓN Y DIVERSIDAD FAMILIAR.pdf"
                 },
                 {
                     id: "3.2",
                     titulo: "Igualdad y equidad en las relaciones familiares.",
                     descripcion: "Este material presenta los conceptos de igualdad y equidad dentro del contexto familiar, resaltando la importancia de garantizar oportunidades, participación y respeto para todos los integrantes del hogar. Se brindan herramientas para identificar prácticas que favorecen relaciones más justas, equilibradas e inclusivas.",
                     tipo: "pdf",
-                    archivo: "recursos/M3_2 DERECHOS HUMANOS, INCLUSIÓN Y DIVERSIDAD FAMILIAR.pdf"
+                    archivo: "recursos/M3_2 DERECHOS HUMANOS INCLUSIÓN Y DIVERSIDAD FAMILIAR.pdf"
                 },
                 {
                     id: "3.3",
                     titulo: "Diversidad e inclusión como factores de convivencia.",
                     descripcion: "Este documento reflexiona sobre la diversidad familiar como una característica propia de las relaciones humanas y destaca la inclusión como un principio fundamental para promover ambientes de respeto y aceptación. Se fortalecen habilidades orientadas al reconocimiento de las diferencias, la empatía y la construcción de espacios familiares libres de discriminación.",
                     tipo: "pdf",
-                    archivo: "recursos/M3_3 DERECHOS HUMANOS, INCLUSIÓN Y DIVERSIDAD FAMILIAR.pdf"
+                    archivo: "recursos/M3_3 DERECHOS HUMANOS INCLUSIÓN Y DIVERSIDAD FAMILIAR.pdf"
                 },
                 {
                     id: "3.4",
@@ -178,21 +178,21 @@ const CURSO = {
                     titulo: "Principios de la crianza positiva",
                     descripcion: "Este documento aborda los fundamentos de la crianza positiva como un enfoque basado en el respeto, la empatía y el reconocimiento de las necesidades emocionales y evolutivas de los niños, niñas y adolescentes. Se presentan principios orientados a fortalecer relaciones familiares afectivas, protectoras y favorecedoras del desarrollo integral.",
                     tipo: "pdf",
-                    archivo: "recursos/M5_1 CRIANZA POSITIVA  EDUCAR CON RESPETO Y LÍMITES SALUDABLES.pdf"
+                    archivo: "recursos/M5_1 CRIANZA POSITIVA EDUCAR CON RESPETO Y LÍMITES SALUDABLES.pdf"
                 },
                 {
                     id: "5.2",
                     titulo: "Disciplina positiva y establecimiento de límites",
                     descripcion: "Este material presenta estrategias para establecer normas y límites saludables desde una perspectiva educativa y respetuosa. Se promueve el acompañamiento del comportamiento infantil y adolescente mediante la comunicación, la coherencia y la orientación positiva, evitando prácticas basadas en el miedo o la violencia.",
                     tipo: "pdf",
-                    archivo: "recursos/M5_2 CRIANZA POSITIVA  EDUCAR CON RESPETO Y LÍMITES SALUDABLES.pdf"
+                    archivo: "recursos/M5_2 CRIANZA POSITIVA EDUCAR CON RESPETO Y LÍMITES SALUDABLES.pdf"
                 },
                 {
                     id: "5.3",
                     titulo: "Vínculos afectivos y desarrollo infantil",
                     descripcion: "Este documento destaca la importancia de los vínculos afectivos seguros en el desarrollo emocional, social y cognitivo de niños, niñas y adolescentes. Se abordan estrategias familiares para fortalecer el apego, la confianza, la seguridad emocional y la construcción de relaciones protectoras.",
                     tipo: "pdf",
-                    archivo: "recursos/M5_3 CRIANZA POSITIVA  EDUCAR CON RESPETO Y LÍMITES SALUDABLES.pdf"
+                    archivo: "recursos/M5_3 CRIANZA POSITIVA EDUCAR CON RESPETO Y LÍMITES SALUDABLES.pdf"
                 },
                 {
                     id: "5.4",
