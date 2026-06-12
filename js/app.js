@@ -1,4 +1,4 @@
-const VERSION = "1.0.2";
+const VERSION = "1.0.1";
 let preguntasEvaluacion = [];
 
 function obtenerPreguntasAleatorias(
@@ -181,12 +181,6 @@ function renderMenu() {
                 }
 
                     ${sub.titulo}
-
-                </div>
-
-                <div class="subdescripcion">
-
-                    ${sub.descripcion}
 
                 </div>
 
